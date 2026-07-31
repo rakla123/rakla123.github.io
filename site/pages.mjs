@@ -1,4 +1,4 @@
-const astroBinProfile = "https://www.astrobin.com/users/FlapAstro/";
+const astroBinProfile = "https://app.astrobin.com/u/Rakla1073#gallery";
 const instagramProfile = "https://www.instagram.com/flapastro/";
 
 function header(active = "") {
@@ -168,7 +168,7 @@ const gallery = layout({
           </fieldset>
           <label class="sort-control"><span>Sort images</span><select id="catalogue-sort"><option value="catalogue">By catalogue</option><option value="name">By object name</option></select></label>
         </div>
-        <p class="result-count" id="result-count" aria-live="polite">3 images</p>
+        <p class="result-count" id="result-count" aria-live="polite">9 images</p>
         <div class="gallery" id="image-catalogue">
           <article class="gallery-card" data-catalogue="messier" data-subject="deep-sky" data-object-name="M81" data-catalogue-rank="1">
             <a href="https://www.astrobin.com/bb09f0/" target="_blank" rel="noreferrer" aria-label="View M81 on AstroBin">
@@ -176,16 +176,52 @@ const gallery = layout({
               <div class="card-meta"><div><div class="image-tags"><span>Messier</span><span>Deep sky</span><span>Galaxy</span></div><h3>M81</h3><p>Bode’s Galaxy · RGB</p></div><span aria-hidden="true">↗</span></div>
             </a>
           </article>
-          <article class="gallery-card" data-catalogue="ngc" data-subject="deep-sky" data-object-name="NGC 3718" data-catalogue-rank="2">
+          <article class="gallery-card" data-catalogue="messier" data-subject="deep-sky" data-object-name="M13" data-catalogue-rank="2">
+            <a href="https://app.astrobin.com/i/3q9b2w" target="_blank" rel="noreferrer" aria-label="View M13 on AstroBin">
+              <div class="image-frame"><img src="https://cdn.astrobin.com/thumbs/Jso-sMB8HFcI_2560x0_9QJlzQeC.jpg?v=1781272856" alt="M13, the Great Globular Cluster in Hercules" loading="lazy"></div>
+              <div class="card-meta"><div><div class="image-tags"><span>Messier</span><span>Deep sky</span><span>Cluster</span></div><h3>M13</h3><p>Great Globular Cluster · RGB</p></div><span aria-hidden="true">↗</span></div>
+            </a>
+          </article>
+          <article class="gallery-card" data-catalogue="ngc" data-subject="deep-sky" data-object-name="NGC 3718" data-catalogue-rank="3">
             <a href="https://www.astrobin.com/dsiose/" target="_blank" rel="noreferrer" aria-label="View NGC 3718 on AstroBin">
               <div class="image-frame"><img src="https://cdn.astrobin.com/thumbs/I0Wdsk13MiZi_2560x0_9QJlzQeC.jpg?v=1781272881" alt="NGC 3718 and nearby galaxies in a wide star field" loading="lazy"></div>
               <div class="card-meta"><div><div class="image-tags"><span>NGC</span><span>Deep sky</span><span>Galaxy</span></div><h3>NGC 3718</h3><p>Peculiar galaxy · RGB</p></div><span aria-hidden="true">↗</span></div>
             </a>
           </article>
-          <article class="gallery-card" data-catalogue="ic" data-subject="deep-sky" data-object-name="IC 434" data-catalogue-rank="3">
+          <article class="gallery-card" data-catalogue="ngc" data-subject="deep-sky" data-object-name="NGC 6888" data-catalogue-rank="4">
+            <a href="https://app.astrobin.com/i/c9g3mo" target="_blank" rel="noreferrer" aria-label="View NGC 6888 on AstroBin">
+              <div class="image-frame"><img src="https://cdn.astrobin.com/thumbs/oFgTQInWMO3p_620x0_t8C9baZf.jpg?v=1782288578" alt="NGC 6888, the Crescent Nebula, and the Soap Bubble Nebula" loading="lazy"></div>
+              <div class="card-meta"><div><div class="image-tags"><span>NGC</span><span>Deep sky</span><span>Nebula</span></div><h3>NGC 6888</h3><p>Crescent &amp; Soap Bubble · HOO</p></div><span aria-hidden="true">↗</span></div>
+            </a>
+          </article>
+          <article class="gallery-card" data-catalogue="ic" data-subject="deep-sky" data-object-name="IC 434" data-catalogue-rank="5">
             <a href="https://www.astrobin.com/dgjxih/" target="_blank" rel="noreferrer" aria-label="View IC 434 on AstroBin">
               <div class="image-frame"><img src="https://cdn.astrobin.com/thumbs/aqPlAtfFbZJW_2560x0_9QJlzQeC.jpg?v=1781272873" alt="The Horsehead Nebula and surrounding hydrogen emission in HOO color" loading="lazy"></div>
               <div class="card-meta"><div><div class="image-tags"><span>IC</span><span>Deep sky</span><span>Nebula</span></div><h3>IC 434</h3><p>Horsehead Nebula · HOO</p></div><span aria-hidden="true">↗</span></div>
+            </a>
+          </article>
+          <article class="gallery-card" data-catalogue="sh2" data-subject="deep-sky" data-object-name="SH2-124" data-catalogue-rank="6">
+            <a href="https://app.astrobin.com/i/rzb68q" target="_blank" rel="noreferrer" aria-label="View SH2-124 on AstroBin">
+              <div class="image-frame"><img src="https://cdn.astrobin.com/thumbs/66ukDcKJMtLb_620x0_t8C9baZf.jpg?v=1784809882" alt="Widefield view of SH2-124, the Hidden Nebula" loading="lazy"></div>
+              <div class="card-meta"><div><div class="image-tags"><span>Sharpless · SH2</span><span>Deep sky</span><span>Nebula</span></div><h3>SH2-124</h3><p>Hidden Nebula · Widefield</p></div><span aria-hidden="true">↗</span></div>
+            </a>
+          </article>
+          <article class="gallery-card" data-catalogue="sh2" data-subject="deep-sky" data-object-name="SH2-173" data-catalogue-rank="7">
+            <a href="https://app.astrobin.com/i/5cb6yf" target="_blank" rel="noreferrer" aria-label="View SH2-173 on AstroBin">
+              <div class="image-frame"><img src="https://cdn.astrobin.com/thumbs/_0CRcNn_4cKc_620x0_t8C9baZf.jpg?v=1781531935" alt="SH2-173, the Phantom of the Opera Nebula" loading="lazy"></div>
+              <div class="card-meta"><div><div class="image-tags"><span>Sharpless · SH2</span><span>Deep sky</span><span>Nebula</span></div><h3>SH2-173</h3><p>Phantom of the Opera · HOS</p></div><span aria-hidden="true">↗</span></div>
+            </a>
+          </article>
+          <article class="gallery-card" data-catalogue="other" data-subject="solar" data-object-name="C/2025 A6 Lemmon" data-catalogue-rank="8">
+            <a href="https://app.astrobin.com/i/niw18f" target="_blank" rel="noreferrer" aria-label="View Comet C/2025 A6 Lemmon on AstroBin">
+              <div class="image-frame"><img src="https://cdn.astrobin.com/thumbs/bvkm67afbA8P_2560x0_6Eqa9Hk-.jpg?v=1781272699" alt="Comet C/2025 A6 Lemmon against a star field" loading="lazy"></div>
+              <div class="card-meta"><div><div class="image-tags"><span>Other</span><span>Solar system</span><span>Comet</span></div><h3>C/2025 A6</h3><p>Comet Lemmon</p></div><span aria-hidden="true">↗</span></div>
+            </a>
+          </article>
+          <article class="gallery-card" data-catalogue="other" data-subject="lunar" data-object-name="Moon Eclipse 2025" data-catalogue-rank="9">
+            <a href="https://app.astrobin.com/i/ftddi0" target="_blank" rel="noreferrer" aria-label="View the 2025 lunar eclipse on AstroBin">
+              <div class="image-frame"><img src="https://cdn.astrobin.com/thumbs/jFYCWCS2ZU_q_2560x0_6Eqa9Hk-.jpg" alt="The eclipsed Moon above the Swiss Alps" loading="lazy"></div>
+              <div class="card-meta"><div><div class="image-tags"><span>Other</span><span>Lunar</span><span>Eclipse</span></div><h3>Lunar Eclipse</h3><p>2025 · Swiss Alps</p></div><span aria-hidden="true">↗</span></div>
             </a>
           </article>
         </div>
