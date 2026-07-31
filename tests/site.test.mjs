@@ -66,6 +66,13 @@ test("serves separate section pages", async () => {
   assert.match(allsky, /ATmega328P \(Old Bootloader\)/);
   assert.match(allsky, /ArduinoSerialMonitor\.exe/);
   assert.match(allsky, /Never power a heater directly from an Arduino pin/);
+  assert.match(software, /AstroBin Sky Mapper/);
+  assert.match(software, /Interactive celestial projection/);
+  assert.match(software, /Start-AstroBinSky\.bat/);
+  assert.match(software, /Node\.js 18 or newer/);
+  assert.match(software, /127\.0\.0\.1:8787/);
+  assert.match(software, /github\.com\/rakla123\/astrobin-sky-mapper/);
+  assert.match(software, /ASTAP and a suitable star database are optional/);
   assert.match(software, /RC-Astro CLI Wrapper/);
 
   for (const html of [gallery, about, equipment, allsky, software]) {
