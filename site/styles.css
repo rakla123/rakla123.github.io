@@ -718,6 +718,10 @@ h2 {
   color: var(--muted);
   line-height: 1.75;
 }
+.software-projects {
+  display: grid;
+  gap: 34px;
+}
 .software-card {
   padding: 46px;
   background: #e7e4de;
@@ -754,6 +758,34 @@ h2 {
   line-height: 1.45;
 }
 .software-actions { display: flex; align-items: center; gap: 26px; }
+.software-guide {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin: 4px 0 42px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+.software-guide h4 {
+  margin-bottom: 12px;
+  color: var(--ink);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.software-guide p,
+.software-guide ol {
+  margin: 0;
+  color: #565b61;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.software-guide ol { padding-left: 18px; }
+.software-guide li + li { margin-top: 8px; }
+.software-guide code {
+  overflow-wrap: anywhere;
+  font-size: .95em;
+}
 .button--dark { background: var(--ink); color: white; }
 .button--dark:hover { background: transparent; color: var(--ink); }
 .software-card .requirement {
@@ -954,6 +986,7 @@ footer {
   .controller-warning { grid-template-columns: 1fr; gap: 12px; }
   .software-card { padding: 30px 22px; }
   .software-card ul { grid-template-columns: 1fr; }
+  .software-guide { grid-template-columns: 1fr; }
   .software-actions { align-items: flex-start; flex-direction: column; }
   footer { grid-template-columns: 1fr; gap: 44px; padding-inline: 18px; }
   .copyright { grid-column: 1; }

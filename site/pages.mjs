@@ -365,15 +365,30 @@ const software = layout({
         <p>Small, focused projects created to make astrophotography processing more direct and accessible.</p>
       </section>
       <section class="software section section--page" aria-label="Software projects">
-        <div class="software-intro"><p class="eyebrow">PixInsight</p><h2>Process with<br>less friction.</h2><p>Personal projects built around practical imaging needs and shared with the astrophotography community.</p></div>
-        <article class="software-card">
-          <div class="software-topline"><span class="status-dot"></span><span>PixInsight script</span><span class="version">v0.9.0 beta</span></div>
-          <h3>RC-Astro CLI Wrapper</h3>
-          <p>A graphical interface for running BlurXTerminator, StarXTerminator, and NoiseXTerminator through the RC-Astro command-line tools—directly from PixInsight.</p>
-          <ul><li>GUI parameter configuration</li><li>Execution progress and error handling</li><li>Automatic output loading and STF transfer</li></ul>
-          <div class="software-actions"><a class="button button--dark" href="https://github.com/rakla123/pixinsight-updates" target="_blank" rel="noreferrer">Source &amp; documentation <span aria-hidden="true">↗</span></a><a class="text-link" href="https://rakla123.github.io/pixinsight-updates/" target="_blank" rel="noreferrer">PixInsight repository ↗</a></div>
-          <p class="requirement">Requires PixInsight and a separately installed, licensed RC-Astro CLI.</p>
-        </article>
+        <div class="software-intro"><p class="eyebrow">Astronomy software</p><h2>Explore and process<br>with less friction.</h2><p>Personal projects built around practical imaging needs and shared with the astrophotography community.</p></div>
+        <div class="software-projects">
+          <article class="software-card">
+            <div class="software-topline"><span class="status-dot"></span><span>Sky atlas</span><span class="version">v1.1.0</span></div>
+            <h3>AstroBin Sky Mapper</h3>
+            <p>A local, browser-based sky atlas that plots images from an AstroBin account or library on an interactive celestial projection. It combines AstroBin metadata with Aladin Lite and can optionally use locally solved ASTAP footprints for more accurate image geometry.</p>
+            <ul><li>Interactive celestial projection</li><li>Image footprints and previews</li><li>Optional local ASTAP solving</li></ul>
+            <div class="software-guide">
+              <section aria-labelledby="sky-mapper-use"><h4 id="sky-mapper-use">How to use it</h4><p>Navigate the Aladin Lite sky, select a projected image to inspect its metadata and preview, and switch between outline and image-overlay modes. Images without usable coordinates remain listed but cannot be placed on the projection. Optional ASTAP solving creates and caches more accurate local WCS polygons.</p></section>
+              <section aria-labelledby="sky-mapper-install"><h4 id="sky-mapper-install">Install on Windows</h4><ol><li>Install Node.js 18 or newer and use a current WebGL-capable browser.</li><li>Download the latest release ZIP and extract it to a writable folder.</li><li>Run <code>Start-AstroBinSky.bat</code>. On first launch, add your own AstroBin username, API key, and secret to the local <code>config.json</code>.</li><li>Save the file and return to the launcher. The atlas opens locally at <code>127.0.0.1:8787</code>.</li></ol></section>
+            </div>
+            <div class="software-actions"><a class="button button--dark" href="https://github.com/rakla123/astrobin-sky-mapper" target="_blank" rel="noreferrer">Source &amp; documentation <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/rakla123/astrobin-sky-mapper/releases/latest" target="_blank" rel="noreferrer">Download latest release ↗</a></div>
+            <p class="requirement">Windows 10 or 11 is required for the supplied launcher. Internet access and personal AstroBin API credentials are required. ASTAP and a suitable star database are optional and installed separately.</p>
+          </article>
+
+          <article class="software-card">
+            <div class="software-topline"><span class="status-dot"></span><span>PixInsight script</span><span class="version">v0.9.0 beta</span></div>
+            <h3>RC-Astro CLI Wrapper</h3>
+            <p>A graphical interface for running BlurXTerminator, StarXTerminator, and NoiseXTerminator through the RC-Astro command-line tools—directly from PixInsight.</p>
+            <ul><li>GUI parameter configuration</li><li>Execution progress and error handling</li><li>Automatic output loading and STF transfer</li></ul>
+            <div class="software-actions"><a class="button button--dark" href="https://github.com/rakla123/pixinsight-updates" target="_blank" rel="noreferrer">Source &amp; documentation <span aria-hidden="true">↗</span></a><a class="text-link" href="https://rakla123.github.io/pixinsight-updates/" target="_blank" rel="noreferrer">PixInsight repository ↗</a></div>
+            <p class="requirement">Requires PixInsight and a separately installed, licensed RC-Astro CLI.</p>
+          </article>
+        </div>
       </section>
     </main>`,
 });
