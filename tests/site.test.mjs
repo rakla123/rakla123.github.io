@@ -78,11 +78,17 @@ test("serves separate section pages", async () => {
   assert.match(allsky, /ArduinoSerialMonitor\.exe/);
   assert.match(allsky, /Never power a heater directly from an Arduino pin/);
   assert.match(software, /AstroBin Sky Mapper/);
-  assert.match(software, /Interactive celestial projection/);
+  assert.match(software, /v1\.2\.0-beta\.6/);
+  assert.match(software, /Hammer–Aitoff/);
+  assert.match(software, /north-up 360° × 180° Aitoff overview/);
   assert.match(software, /Start-AstroBinSky\.bat/);
-  assert.match(software, /Node\.js 18 or newer/);
+  assert.match(software, /Node\.js 22\.13 or newer/);
   assert.match(software, /127\.0\.0\.1:8787/);
   assert.match(software, /github\.com\/rakla123\/astrobin-sky-mapper/);
+  assert.match(software, /releases\/download\/v1\.2\.0-beta\.6\/AstroBin-Sky-Mapper-1\.2\.0-beta\.6\.zip/);
+  assert.match(software, /USER-GUIDE\.md/);
+  assert.match(software, /KNOWN-LIMITATIONS\.md/);
+  assert.match(software, /reported in the server log/);
   assert.match(software, /ASTAP and a suitable star database are optional/);
   assert.match(software, /RC-Astro CLI Wrapper/);
 
