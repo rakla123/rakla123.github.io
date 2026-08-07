@@ -9,6 +9,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "start": "node scripts/serve.mjs",
-    "test": "node --test tests/site.test.mjs"
+    "test": "node --test tests/site.test.mjs",
+    "update:skymapper": "node scripts/update-skymapper-snapshot.mjs"
   }
 }

@@ -36,3 +36,22 @@ the visitor's own computer and reads credentials only from its local
 The local source archive is maintained outside the public site under the
 FlapAstro OneDrive astronomy library. Local filesystem paths are never emitted
 in generated pages or deployment artifacts.
+
+## Hosted Sky Mapper
+
+`/skymapper/` is a credential-free, browser-only portfolio edition of AstroBin
+Sky Mapper. It uses the same Aladin viewer and footprint rendering code as the
+desktop application, but reads a static snapshot of public FlapAstro image
+metadata from `public/skymapper/data/`. It cannot run ASTAP or display another
+visitor's AstroBin account.
+
+To refresh the hosted snapshot, start the local desktop mapper with the
+FlapAstro account configured, then run:
+
+```text
+npm run update:skymapper
+```
+
+The update script deliberately keeps only public display fields. API keys,
+secrets, local paths, raw API records, descriptions, and precise observer
+coordinates are never written to the website.
