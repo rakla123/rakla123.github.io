@@ -18,11 +18,10 @@ function header(active = "") {
       </a>
       <nav aria-label="Primary navigation">
         ${link("/gallery/", "Images", "gallery")}
-        ${link("/about/", "About", "about")}
+        ${link("/skymapper/", "Sky Mapper", "skymapper")}
         ${link("/equipment/", "Equipment", "equipment")}
         ${link("/allsky/", "All-Sky", "allsky")}
-        ${link("/software/", "Software", "software")}
-        ${link("/skymapper/", "Sky Mapper", "skymapper")}
+        ${link("/about/", "About", "about")}
       </nav>
       <div class="header-socials" aria-label="FlapAstro social profiles">
         <a href="${astroBinProfile}" target="_blank" rel="noreferrer">AstroBin <span aria-hidden="true">↗</span></a>
@@ -35,11 +34,10 @@ function header(active = "") {
     </header>
     <div class="mobile-nav" id="mobile-nav" hidden>
       ${link("/gallery/", "Images", "gallery")}
-      ${link("/about/", "About", "about")}
+      ${link("/skymapper/", "Sky Mapper", "skymapper")}
       ${link("/equipment/", "Equipment", "equipment")}
       ${link("/allsky/", "All-Sky Camera", "allsky")}
-      ${link("/software/", "Software", "software")}
-      ${link("/skymapper/", "Sky Mapper", "skymapper")}
+      ${link("/about/", "About", "about")}
       <a href="${astroBinProfile}" target="_blank" rel="noreferrer">AstroBin ↗</a>
       <a href="${instagramProfile}" target="_blank" rel="noreferrer">Instagram · @FlapAstro ↗</a>
     </div>`;
