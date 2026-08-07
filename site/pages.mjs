@@ -22,6 +22,7 @@ function header(active = "") {
         ${link("/equipment/", "Equipment", "equipment")}
         ${link("/allsky/", "All-Sky", "allsky")}
         ${link("/software/", "Software", "software")}
+        ${link("/skymapper/", "Sky Mapper", "skymapper")}
       </nav>
       <div class="header-socials" aria-label="FlapAstro social profiles">
         <a href="${astroBinProfile}" target="_blank" rel="noreferrer">AstroBin <span aria-hidden="true">↗</span></a>
@@ -38,6 +39,7 @@ function header(active = "") {
       ${link("/equipment/", "Equipment", "equipment")}
       ${link("/allsky/", "All-Sky Camera", "allsky")}
       ${link("/software/", "Software", "software")}
+      ${link("/skymapper/", "Sky Mapper", "skymapper")}
       <a href="${astroBinProfile}" target="_blank" rel="noreferrer">AstroBin ↗</a>
       <a href="${instagramProfile}" target="_blank" rel="noreferrer">Instagram · @FlapAstro ↗</a>
     </div>`;
@@ -416,7 +418,7 @@ const software = layout({
               <section><h4>What beta.6 changes</h4><p>Startup and Home now preserve a complete east–west whole-sky view with north up. Status and page controls are centered between Aladin’s native controls, and loading an image no longer replaces the initial overview.</p></section>
               <section><h4>Known limitations</h4><p>Footprint accuracy depends on coordinates and field metadata supplied by AstroBin. ASTAP improves geometry when suitable local source files are available. The tool runs locally; it is not a hosted AstroBin client and does not upload API credentials to FlapAstro.</p></section>
             </div>
-            <div class="software-actions"><a class="button button--dark" href="https://github.com/rakla123/astrobin-sky-mapper/releases/download/v1.2.0-beta.6/AstroBin-Sky-Mapper-1.2.0-beta.6.zip" target="_blank" rel="noreferrer">Download beta.6 <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/rakla123/astrobin-sky-mapper/blob/main/USER-GUIDE.md" target="_blank" rel="noreferrer">User guide ↗</a><a class="text-link" href="https://github.com/rakla123/astrobin-sky-mapper/blob/main/KNOWN-LIMITATIONS.md" target="_blank" rel="noreferrer">Known limitations ↗</a><a class="text-link" href="https://github.com/rakla123/astrobin-sky-mapper" target="_blank" rel="noreferrer">Source code ↗</a></div>
+            <div class="software-actions"><a class="button button--dark" href="/skymapper/">Run Sky Mapper <span aria-hidden="true">→</span></a><a class="text-link" href="https://github.com/rakla123/astrobin-sky-mapper/releases/download/v1.2.0-beta.6/AstroBin-Sky-Mapper-1.2.0-beta.6.zip" target="_blank" rel="noreferrer">Download beta.6 ↗</a><a class="text-link" href="https://github.com/rakla123/astrobin-sky-mapper/blob/main/USER-GUIDE.md" target="_blank" rel="noreferrer">User guide ↗</a><a class="text-link" href="https://github.com/rakla123/astrobin-sky-mapper/blob/main/KNOWN-LIMITATIONS.md" target="_blank" rel="noreferrer">Known limitations ↗</a><a class="text-link" href="https://github.com/rakla123/astrobin-sky-mapper" target="_blank" rel="noreferrer">Source code ↗</a></div>
             <p class="requirement">Windows 10 or 11 is required for the supplied launcher. Internet access, Node.js 22.13+, and personal AstroBin API credentials are required. ASTAP and a suitable star database are optional and installed separately.</p>
           </article>
 
