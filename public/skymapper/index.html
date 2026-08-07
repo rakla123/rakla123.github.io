@@ -16,6 +16,77 @@
         <div id="thumb-layer" class="thumb-layer"></div>
         <div class="topbar">
           <div class="branding">
+            <a class="site-return" href="/" aria-label="Return to the FlapAstro website"><span aria-hidden="true">←</span> Back to FlapAstro website</a>
+            <p class="eyebrow">AstroBin Sky Mapper</p>
+            <h1 id="account-title">AstroBin account</h1>
+          </div>
+          <div class="status-pills">
+            <span id="library-pill">Library: not configured</span>
+            <span id="image-count">Loading images...</span>
+            <span id="observer-pill">0, 0 - 0 m</span>
+            <div class="page-controls" aria-label="Image pages">
+              <label class="page-size-control" for="page-size">
+                <span>Show</span>
+                <select id="page-size" aria-label="Images per page">
+                  <option value="30">30</option>
+                  <option value="60">60</option>
+                  <option value="100">100</option>
+                  <option value="all">All</option>
+                </select>
+              </label>
+              <button id="previous-page" type="button" aria-label="Previous image page">Previous</button>
+              <span id="page-status">Page 1 of 1</span>
+              <button id="next-page" type="button" aria-label="Next image page">Next</button>
+            </div>
+          </div>
+        </div>
+        <aside id="preview" class="preview" aria-live="polite">
+          <div class="preview-empty">
+            <strong>Hover over an image</strong>
+            <span>Hover over a footprint to show preview and metadata.</span>
+          </div>
+        </aside>
+        <button id="home-button" class="home-button" type="button" title="Back to the north-up whole-sky overview" aria-label="Back to the north-up whole-sky overview">⌂</button>
+        <div class="calibration-panel" aria-label="Footprint calibration">
+          <div class="segmented" id="scale-controls">
+            <button type="button" data-scale-source="pixel" title="Size footprints from image pixels multiplied by AstroBin pixel scale. Best when pixel scale metadata is reliable." aria-label="Pixel scale: size footprints from image pixels multiplied by AstroBin pixel scale.">Pixel</button>
+            <button type="button" data-scale-source="field" title="Size footprints from AstroBin field radius and image aspect ratio. Useful when pixel scale is missing or inconsistent." aria-label="Field scale: size footprints from AstroBin field radius and image aspect ratio.">Field</button>
+          </div>
+          <div class="segmented" id="overlay-controls">
+            <button type="button" data-overlay-mode="outline" title="Show only footprint outlines. Fastest and clearest mode for checking placement." aria-label="Outline overlay: show only footprint outlines.">Outline</button>
+            <button type="button" data-overlay-mode="image" title="Fill selected or nearby footprints with AstroBin preview images. More visual, but preview JPEGs may be cropped or resampled." aria-label="Image overlay: fill selected or nearby footprints with AstroBin preview images.">Image</button>
+          </div>
+          <div class="segmented" id="rotation-controls">
+            <button type="button" data-rotation="0" title="Apply no global rotation offset to metadata-based footprints." aria-label="Global rotation offset 0 degrees.">0°</button>
+            <button type="button" data-rotation="90" title="Apply a 90 degree global rotation offset to metadata-based footprints." aria-label="Global rotation offset 90 degrees.">90°</button>
+            <button type="button" data-rotation="180" title="Apply a 180 degree global rotation offset to metadata-based footprints." aria-label="Global rotation offset 180 degrees.">180°</button>
+            <button type="button" data-rotation="270" title="Apply a 270 degree global rotation offset to metadata-based footprints." aria-label="Global rotation offset 270 degrees.">270°</button>
+          </div>
+        </div>
+        <p class="api-notice">Hosted portfolio edition · Public metadata snapshot · <a href="/software/">About and desktop download</a><br>This product uses the AstroBin API but is not endorsed or certified by AstroBin.</p>
+      </section>
+    </main>
+    <script type="module" src="bootstrap.js"></script>
+  </body>
+</html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore the FlapAstro AstroBin portfolio on an interactive whole-sky map.">
+    <meta name="theme-color" content="#02050b">
+    <title>AstroBin Sky Mapper — FlapAstro</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="sky-stage" aria-label="AstroBin sky projection">
+        <div id="aladin"></div>
+        <svg id="footprint-svg" class="footprint-svg" aria-hidden="true"></svg>
+        <div id="thumb-layer" class="thumb-layer"></div>
+        <div class="topbar">
+          <div class="branding">
             <p class="eyebrow"><a href="/" aria-label="Return to the FlapAstro website">FlapAstro</a> · AstroBin Sky Mapper</p>
             <h1 id="account-title">AstroBin account</h1>
           </div>
