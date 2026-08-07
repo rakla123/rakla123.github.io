@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 import worker from "../dist/server/index.js";
 
@@ -129,4 +130,35 @@ test("returns a real 404 for missing assets", async () => {
 test("returns a real 404 for missing pages", async () => {
   const response = await request("/missing/");
   assert.equal(response.status, 404);
+});
+
+test("local preview server has a traversal-safe static fallback", async () => {
+  const source = await readFile(new URL("../scripts/serve.mjs", import.meta.url), "utf8");
+  assert.match(source, /staticResponse/);
+  assert.match(source, /startsWith/);
+  assert.match(source, /x-content-type-options/);
+});
+
+test("links to and builds a runnable credential-free Sky Mapper section", async () => {
+  const [home, software] = await Promise.all([
+    request("/").then((response) => response.text()),
+    request("/software/").then((response) => response.text()),
+  ]);
+  const html = await readFile(new URL("../dist/client/skymapper/index.html", import.meta.url), "utf8");
+  const bootstrap = await readFile(new URL("../dist/client/skymapper/bootstrap.js", import.meta.url), "utf8");
+  const snapshot = JSON.parse(await readFile(new URL("../dist/client/skymapper/data/images.json", import.meta.url), "utf8"));
+
+  assert.match(home, /href="\/skymapper\/"/);
+  assert.match(software, /href="\/skymapper\/"/);
+  assert.match(software, /Run Sky Mapper/);
+  assert.match(html, /AstroBin Sky Mapper — FlapAstro/);
+  assert.match(html, /Hosted portfolio edition/);
+  assert.match(html, /href="\/software\/"/);
+  assert.match(bootstrap, /\.\/data\/images\.json/);
+  assert.match(bootstrap, /\.\/data\/config\.json/);
+  assert.equal(snapshot.username, "FlapAstro");
+  assert.ok(snapshot.images.length > 0);
+  assert.equal(snapshot.observer.lat, 0);
+  assert.equal(JSON.stringify(snapshot).includes("api_secret"), false);
+  assert.equal(JSON.stringify(snapshot).includes("api_key"), false);
 });
