@@ -20,6 +20,7 @@ function header(active = "") {
         ${link("/gallery/", "Images", "gallery")}
         ${link("/skymapper/", "Sky Mapper", "skymapper")}
         ${link("/equipment/", "Equipment", "equipment")}
+        ${link("/software/", "Software", "software")}
         ${link("/allsky/", "All-Sky", "allsky")}
         ${link("/about/", "About", "about")}
       </nav>
@@ -36,6 +37,7 @@ function header(active = "") {
       ${link("/gallery/", "Images", "gallery")}
       ${link("/skymapper/", "Sky Mapper", "skymapper")}
       ${link("/equipment/", "Equipment", "equipment")}
+      ${link("/software/", "Software", "software")}
       ${link("/allsky/", "All-Sky Camera", "allsky")}
       ${link("/about/", "About", "about")}
       <a href="${astroBinProfile}" target="_blank" rel="noreferrer">AstroBin ↗</a>
