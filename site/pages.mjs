@@ -423,12 +423,12 @@ const software = layout({
           </article>
 
           <article class="software-card">
-            <div class="software-topline"><span class="status-dot"></span><span>PixInsight script</span><span class="version">v0.10.0</span></div>
+            <div class="software-topline"><span class="status-dot"></span><span>PixInsight script</span><span class="version">v0.10.1</span></div>
             <h3>RC-Astro CLI Wrapper</h3>
-            <p>A graphical interface for running BlurXTerminator, StarXTerminator, and NoiseXTerminator through the RC-Astro command-line tools directly from PixInsight. Version 0.10.0 is signed for PixInsight 1.9.4 and current RC-Astro CLI releases.</p>
-            <ul><li>GUI parameter configuration</li><li>Execution progress and error handling</li><li>Automatic output loading and STF transfer</li></ul>
-            <div class="software-actions"><a class="button button--dark" href="https://github.com/rakla123/pixinsight-updates" target="_blank" rel="noreferrer">Source &amp; documentation <span aria-hidden="true">↗</span></a><a class="text-link" href="https://raw.githubusercontent.com/rakla123/pixinsight-updates/main/" target="_blank" rel="noreferrer">PixInsight repository ↗</a><a class="text-link" href="https://raw.githubusercontent.com/rakla123/pixinsight-updates/main/packages/RC-Astro-CLI-Wrapper-0.10.0-20260913202352.zip" target="_blank" rel="noreferrer">Download v0.10.0 ↗</a></div>
-            <p class="requirement">Requires PixInsight and a separately installed, licensed RC-Astro CLI.</p>
+            <p>A signed V8 interface for running BlurXTerminator, StarXTerminator, and NoiseXTerminator through the RC-Astro CLI directly from PixInsight. Version 0.10.1 is built for PixInsight 1.9.5 and preserves XISF image properties, astrometric solutions, FITS keywords, resolution, and RGB working-space metadata.</p>
+            <ul><li>Persistent, tool-specific BXT, SXT, and NXT controls</li><li>Live command, progress, cancellation, and error reporting</li><li>Automatic output loading with STF transfer</li></ul>
+            <div class="software-actions"><a class="button button--dark" href="https://github.com/rakla123/pixinsight-updates" target="_blank" rel="noreferrer">Source &amp; documentation <span aria-hidden="true">↗</span></a><a class="text-link" href="https://raw.githubusercontent.com/rakla123/pixinsight-updates/main/" target="_blank" rel="noreferrer">PixInsight repository ↗</a><a class="text-link" href="https://raw.githubusercontent.com/rakla123/pixinsight-updates/main/packages/RC-Astro-CLI-Wrapper-0.10.1-20260918190000.zip" target="_blank" rel="noreferrer">Download v0.10.1 ↗</a></div>
+            <p class="requirement">Requires PixInsight 1.9.5 or newer and a separately installed, licensed RC-Astro CLI 1.0.0 or newer.</p>
           </article>
         </div>
       </section>

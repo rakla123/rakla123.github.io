@@ -92,6 +92,11 @@ test("serves separate section pages", async () => {
   assert.match(software, /reported in the server log/);
   assert.match(software, /ASTAP and a suitable star database are optional/);
   assert.match(software, /RC-Astro CLI Wrapper/);
+  assert.match(software, /v0\.10\.1/);
+  assert.match(software, /PixInsight 1\.9\.5/);
+  assert.match(software, /preserves XISF image properties/);
+  assert.match(software, /raw\.githubusercontent\.com\/rakla123\/pixinsight-updates\/main\//);
+  assert.match(software, /RC-Astro-CLI-Wrapper-0\.10\.1-20260918190000\.zip/);
 
   for (const html of [gallery, about, equipment, allsky, software]) {
     assert.doesNotMatch(html, /Ralf|Klappert/i);
