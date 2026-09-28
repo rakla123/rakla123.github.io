@@ -276,7 +276,11 @@ const equipment = layout({
           </article>
           <article class="equipment-system">
             <div class="system-number">02</div>
-            <div class="system-content"><p class="system-label">Wide-field system</p><h3>RedCat 51 II</h3><p class="system-summary">A compact, fast color system for expansive nebulae, molecular clouds, and wide-field compositions.</p><dl class="equipment-list"><div><dt>Optics</dt><dd>William Optics RedCat 51 II</dd></div><div><dt>Focusing</dt><dd>DeepSkyDad AF</dd></div><div><dt>Camera</dt><dd>QHYCCD QHY268C</dd></div><div><dt>Mount</dt><dd>Sky-Watcher AZ-EQ6 GT</dd></div></dl></div>
+            <div class="system-content"><p class="system-label">Wide-field system</p><h3>RedCat 51 II</h3><p class="system-summary">A compact, fast color system for expansive nebulae, molecular clouds, and wide-field compositions.</p><dl class="equipment-list"><div><dt>Optics</dt><dd>William Optics RedCat 51 II</dd></div><div><dt>Focusing</dt><dd>DeepSkyDad AF</dd></div><div><dt>Camera</dt><dd>QHYCCD QHY268C</dd></div><div><dt>Filters</dt><dd>Optolong L-Pro · Optolong L-Enhance · Optolong L-Extreme · Optolong L-Ultimate</dd></div><div><dt>Mount</dt><dd>Sky-Watcher AZ-EQ6 GT</dd></div></dl></div>
+          </article>
+          <article class="equipment-system">
+            <div class="system-number">03</div>
+            <div class="system-content"><p class="system-label">Other</p><h3>Environment</h3><p class="system-summary">Environmental monitoring for imaging sessions and observatory conditions.</p><dl class="equipment-list"><div><dt>Monitor</dt><dd>Astromi MGBox V2</dd></div></dl></div>
           </article>
         </div>
         <div class="equipment-note"><p>Equipment changes as the imaging workflow evolves. Refer to the individual image pages for the precise telescope, camera, filters, and exposure details used for each result.</p><a class="text-link" href="${astroBinProfile}" target="_blank" rel="noreferrer">View equipment details on AstroBin <span aria-hidden="true">↗</span></a></div>

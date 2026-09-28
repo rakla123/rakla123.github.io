@@ -68,6 +68,9 @@ test("serves separate section pages", async () => {
   assert.match(equipment, /William Optics RedCat 51 II/);
   assert.match(equipment, /DeepSkyDad AF/);
   assert.match(equipment, /QHYCCD QHY268C/);
+  assert.match(equipment, /Optolong L-Pro · Optolong L-Enhance · Optolong L-Extreme · Optolong L-Ultimate/);
+  assert.match(equipment, /<h3>Environment<\/h3>/);
+  assert.match(equipment, /Astromi MGBox V2/);
   assert.match(equipment, /Sky-Watcher AZ-EQ6 GT/);
   assert.match(allsky, /All-Sky Camera/);
   assert.match(allsky, /ZWO ASI224MC/);
