@@ -57,11 +57,14 @@ test("serves separate section pages", async () => {
   assert.match(about, /From film/);
   assert.match(equipment, /Sky-Watcher Equinox 120/);
   assert.match(equipment, /0\.85× reducer/);
-  assert.match(equipment, /FTF focuser/);
+  assert.match(equipment, /Starlight Feathertouch 2\.5&quot; \(FTF2535HD\) with DeepSkyDad AF2 AutoFocuser/);
   assert.match(equipment, /QHYCCD QHY268M/);
-  assert.match(equipment, /QHY OAG/);
-  assert.match(equipment, /QHY filter wheel/);
-  assert.match(equipment, /Antlia LRGB · Ha · OIII · SII/);
+  assert.match(equipment, /QHYCCD OAG-M with QHY5-II/);
+  assert.match(equipment, /QHYCFW3-M-SR \(7×36 mm\)/);
+  assert.match(equipment, /Antlia LRGB-V Pro/);
+  assert.match(equipment, /Antlia 4\.5 nm H-alpha \(Ha\) EDGE/);
+  assert.match(equipment, /Antlia 3 nm OIII Pro/);
+  assert.match(equipment, /Antlia 3 nm SII Pro/);
   assert.match(equipment, /William Optics RedCat 51 II/);
   assert.match(equipment, /DeepSkyDad AF/);
   assert.match(equipment, /QHYCCD QHY268C/);
