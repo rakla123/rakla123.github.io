@@ -58,6 +58,7 @@ test("serves separate section pages", async () => {
   assert.match(gallery, /Lunar Eclipse/);
   assert.match(gallery, /https:\/\/app\.astrobin\.com\/u\/Rakla1073#gallery/);
   assert.match(about, /From film/);
+  assert.match(about, /garden observatory at 840 m under Bortle 4 skies/);
   assert.match(equipment, /Sky-Watcher Equinox 120/);
   assert.match(equipment, /0\.85× reducer/);
   assert.match(equipment, /Starlight Feathertouch 2\.5&quot; \(FTF2535HD\) with DeepSkyDad AF2 AutoFocuser/);

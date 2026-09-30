@@ -247,7 +247,7 @@ const about = layout({
         <div class="about-grid">
           <div><p class="eyebrow">The story</p><h2>From film to digital imaging.</h2></div>
           <div class="about-copy">
-            <p class="lead">FlapAstro is an astrophotography portfolio based in Switzerland.</p>
+            <p class="lead">FlapAstro is an astrophotographer based in Switzerland, working from a garden observatory at 840 m under Bortle 4 skies.</p>
             <p>An interest in astronomy that began around 1980 has evolved alongside the tools used to capture the night sky—from film and manually guided exposures to today’s digital imaging systems.</p>
             <p>I enjoy the whole process: planning a target, collecting data through the night, processing the result, and occasionally writing software when the available tools do not quite fit.</p>
             <p>This site is where I keep selected images, notes about the equipment, and the astronomy software I share.</p>
