@@ -322,6 +322,22 @@ const allsky = layout({
           <article><span>04</span><p>Environment</p><h3>Sensor + Arduino</h3><p>Temperature and humidity sensing, dew-point calculation, and variable-power heater control.</p></article>
         </div>
 
+        <section class="allsky-photos" aria-labelledby="allsky-photos-title">
+          <div class="allsky-photos__intro">
+            <p class="eyebrow">Inside the camera</p>
+            <h2 id="allsky-photos-title">The build in detail</h2>
+            <p>The enclosure brings the camera, computer, network connections, environmental sensor, and automatic dew-control electronics together in one weather-resistant system.</p>
+          </div>
+          <div class="allsky-photo-grid">
+            <figure class="allsky-photo allsky-photo--overview"><img src="/images/allsky/components.jpg" alt="Disassembled all-sky camera showing its enclosure, dome, camera plate, electronics, and power supply" loading="lazy"><figcaption>Components</figcaption></figure>
+            <figure class="allsky-photo"><img src="/images/allsky/intel-nuc.jpg" alt="Intel NUC computer installed inside the all-sky camera enclosure" loading="lazy"><figcaption>Intel NUC</figcaption></figure>
+            <figure class="allsky-photo"><img src="/images/allsky/humidity-sensor-wifi-antennas.jpg" alt="External humidity sensor port and two Wi-Fi antennas on the all-sky camera enclosure" loading="lazy"><figcaption>Humidity sensor and external Wi-Fi antennas</figcaption></figure>
+            <figure class="allsky-photo"><img src="/images/allsky/arduino-nano-controller.jpg" alt="Arduino Nano board used to read humidity and control the dew heater" loading="lazy"><figcaption>Arduino Nano humidity and heater controller</figcaption></figure>
+            <figure class="allsky-photo"><img src="/images/allsky/dew-heater-driver.jpg" alt="MOSFET driver and wiring used to control the all-sky camera dew heater" loading="lazy"><figcaption>Dew-heater driver</figcaption></figure>
+            <figure class="allsky-photo"><img src="/images/allsky/dew-heater.jpg" alt="Circular dew heater fitted around the all-sky camera lens opening" loading="lazy"><figcaption>Dew heater</figcaption></figure>
+          </div>
+        </section>
+
         <section class="dew-system" aria-labelledby="dew-title">
           <div class="dew-heading">
             <div><p class="eyebrow">Automatic dew prevention</p><h2 id="dew-title">Heat only<br>when needed.</h2></div>

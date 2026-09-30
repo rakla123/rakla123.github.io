@@ -80,6 +80,12 @@ test("serves separate section pages", async () => {
   assert.match(allsky, /ZWO ASI224MC/);
   assert.match(allsky, /Intel NUC/);
   assert.match(allsky, /AllSky software/);
+  assert.match(allsky, /\/images\/allsky\/components\.jpg/);
+  assert.match(allsky, /\/images\/allsky\/intel-nuc\.jpg/);
+  assert.match(allsky, /\/images\/allsky\/humidity-sensor-wifi-antennas\.jpg/);
+  assert.match(allsky, /\/images\/allsky\/arduino-nano-controller\.jpg/);
+  assert.match(allsky, /\/images\/allsky\/dew-heater-driver\.jpg/);
+  assert.match(allsky, /\/images\/allsky\/dew-heater\.jpg/);
   assert.match(allsky, /temperature and relative humidity/i);
   assert.match(allsky, /calculates the current dew point/i);
   assert.match(allsky, /Arduino varies the heater’s power output/i);

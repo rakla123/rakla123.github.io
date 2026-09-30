@@ -491,6 +491,48 @@ h2 {
 }
 .allsky-parts h3 { margin: 0 0 18px; font: 400 25px/1.05 Georgia, serif; }
 .allsky-parts article > p:last-child { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
+.allsky-photos {
+  padding: 96px 0 30px;
+}
+.allsky-photos__intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px;
+  align-items: end;
+  margin-bottom: 42px;
+}
+.allsky-photos__intro .eyebrow { grid-column: 1 / -1; margin-bottom: -28px; }
+.allsky-photos__intro h2 { margin: 0; }
+.allsky-photos__intro > p:last-child {
+  max-width: 480px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+.allsky-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px 24px;
+}
+.allsky-photo { margin: 0; }
+.allsky-photo--overview { grid-column: 1 / -1; }
+.allsky-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #dfe1e0;
+}
+.allsky-photo--overview img {
+  aspect-ratio: 16 / 8;
+  object-position: center 44%;
+}
+.allsky-photo figcaption {
+  padding-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
 .dew-system { padding: 140px 0 80px; }
 .dew-heading {
   display: grid;
@@ -995,6 +1037,8 @@ footer {
   .allsky-parts { grid-template-columns: repeat(2, 1fr); }
   .allsky-parts article:nth-child(2) { border-right: 0; }
   .allsky-parts article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .allsky-photos__intro { grid-template-columns: 1fr; gap: 18px; }
+  .allsky-photos__intro .eyebrow { grid-column: 1; margin-bottom: 0; }
   .dew-heading { grid-template-columns: 1fr; gap: 34px; }
   .dew-flow { grid-template-columns: 1fr; }
   .dew-flow li { min-height: auto; padding: 24px 0 30px 52px; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -1063,6 +1107,11 @@ footer {
     border-bottom: 1px solid var(--line);
   }
   .allsky-parts article:last-child { border-bottom: 0; }
+  .allsky-photos { padding-top: 72px; }
+  .allsky-photo-grid { grid-template-columns: 1fr; gap: 28px; }
+  .allsky-photo--overview { grid-column: 1; }
+  .allsky-photo img,
+  .allsky-photo--overview img { aspect-ratio: 4 / 3; }
   .dew-system { padding-top: 92px; }
   .controller-project { padding-top: 64px; }
   .controller-project__actions { align-items: stretch; flex-direction: column; }
