@@ -108,9 +108,9 @@ const home = layout({
         <div class="hero-shade"></div>
         <div class="hero-copy">
           <p class="eyebrow">Astrophotography · Switzerland</p>
-          <h1 id="hero-title">A closer look<br>at the deep sky.</h1>
-          <p class="hero-intro">Images shaped by long nights, careful observation, and a lasting fascination with the universe.</p>
-          <a class="text-link light" href="/gallery/">Explore the image catalogue <span aria-hidden="true">→</span></a>
+          <h1 id="hero-title">Deep-sky astrophotography.</h1>
+          <p class="hero-intro">I photograph galaxies, nebulae, and the occasional visitor to our Solar System from Switzerland.</p>
+          <a class="text-link light" href="/gallery/">View the images <span aria-hidden="true">→</span></a>
         </div>
         <a class="image-caption" href="https://www.astrobin.com/dsiose/" target="_blank" rel="noreferrer">
           <span>NGC 3718</span>
@@ -120,15 +120,15 @@ const home = layout({
       </section>
       <section class="home-directory" aria-labelledby="explore-title">
         <div class="directory-heading">
-          <p class="eyebrow">Explore FlapAstro</p>
-          <h2 id="explore-title">Images, instruments,<br>and software.</h2>
+          <p class="eyebrow">On this site</p>
+          <h2 id="explore-title">Images, equipment, and software.</h2>
         </div>
         <div class="directory-grid">
-          <a href="/gallery/"><span>01</span><h3>Images</h3><p>Browse by catalogue and subject type.</p><b aria-hidden="true">→</b></a>
-          <a href="/about/"><span>02</span><h3>About</h3><p>The story and approach behind FlapAstro.</p><b aria-hidden="true">→</b></a>
-          <a href="/equipment/"><span>03</span><h3>Equipment</h3><p>The optical systems used to gather the light.</p><b aria-hidden="true">→</b></a>
-          <a href="/allsky/"><span>04</span><h3>All-Sky Camera</h3><p>A future live view and archive of the sky above.</p><b aria-hidden="true">→</b></a>
-          <a href="/software/"><span>05</span><h3>Software</h3><p>Tools created for the imaging workflow.</p><b aria-hidden="true">→</b></a>
+          <a href="/gallery/"><span>01</span><h3>Images</h3><p>A selection of deep-sky, Solar System, and lunar work.</p><b aria-hidden="true">→</b></a>
+          <a href="/about/"><span>02</span><h3>About</h3><p>How a long-running interest in astronomy became FlapAstro.</p><b aria-hidden="true">→</b></a>
+          <a href="/equipment/"><span>03</span><h3>Equipment</h3><p>The telescopes, cameras, filters, and supporting hardware I use.</p><b aria-hidden="true">→</b></a>
+          <a href="/allsky/"><span>04</span><h3>All-Sky Camera</h3><p>My camera and dew-control project for monitoring the whole sky.</p><b aria-hidden="true">→</b></a>
+          <a href="/software/"><span>05</span><h3>Software</h3><p>Small tools I build for astronomy and image processing.</p><b aria-hidden="true">→</b></a>
         </div>
       </section>
     </main>`,
@@ -142,8 +142,8 @@ const gallery = layout({
     <main id="main">
       <section class="page-intro">
         <p class="eyebrow">Image archive</p>
-        <h1>The image<br>catalogue.</h1>
-        <p>Browse by astronomical catalogue and subject type. Full-resolution images and acquisition details are available on AstroBin.</p>
+        <h1>Images</h1>
+        <p>A selection of my astrophotography. Use the filters to browse, or open an image on AstroBin for the full-resolution version and acquisition details.</p>
       </section>
       <section class="work section section--page" aria-label="Image catalogue">
         <div class="catalogue-controls" aria-label="Image catalogue controls">
@@ -241,16 +241,16 @@ const about = layout({
     <main id="main">
       <section class="page-intro">
         <p class="eyebrow">About FlapAstro</p>
-        <h1>Curiosity,<br>measured in light-years.</h1>
+        <h1>About FlapAstro</h1>
       </section>
       <section class="about about--page section">
         <div class="about-grid">
-          <div><p class="eyebrow">The story</p><h2>From film<br>to photons.</h2></div>
+          <div><p class="eyebrow">The story</p><h2>From film to digital imaging.</h2></div>
           <div class="about-copy">
             <p class="lead">FlapAstro is an astrophotography portfolio based in Switzerland.</p>
             <p>An interest in astronomy that began around 1980 has evolved alongside the tools used to capture the night sky—from film and manually guided exposures to today’s digital imaging systems.</p>
-            <p>The process combines patient acquisition, careful processing, and software experimentation. Every image offers another reason to keep learning.</p>
-            <p>This site brings selected images, the equipment behind them, and personal astronomy software together in one place.</p>
+            <p>I enjoy the whole process: planning a target, collecting data through the night, processing the result, and occasionally writing software when the available tools do not quite fit.</p>
+            <p>This site is where I keep selected images, notes about the equipment, and the astronomy software I share.</p>
           </div>
         </div>
       </section>
@@ -265,8 +265,8 @@ const equipment = layout({
     <main id="main">
       <section class="page-intro">
         <p class="eyebrow">Equipment</p>
-        <h1>The tools behind<br>the images.</h1>
-        <p>Two complementary imaging systems cover detailed deep-sky work and wider fields. Exact acquisition equipment remains recorded with each image on AstroBin.</p>
+        <h1>Imaging equipment</h1>
+        <p>I use two complementary telescope setups: the Equinox for smaller deep-sky targets and the RedCat for wider fields. Each image on AstroBin records the exact equipment used.</p>
       </section>
       <section class="equipment section section--page">
         <div class="equipment-systems">
@@ -296,7 +296,7 @@ const allsky = layout({
     <main id="main">
       <section class="page-intro">
         <p class="eyebrow">All-Sky Camera</p>
-        <h1>Built to watch<br>the whole sky.</h1>
+        <h1>All-sky camera</h1>
         <p>A purpose-built camera system for continuous horizon-to-horizon imaging, with its own Windows computer and automatic dew-prevention controller.</p>
       </section>
       <section class="allsky section section--page" aria-labelledby="allsky-overview">
@@ -403,11 +403,11 @@ const software = layout({
     <main id="main">
       <section class="page-intro">
         <p class="eyebrow">Software</p>
-        <h1>Tools for the<br>imaging workflow.</h1>
-        <p>Small, focused projects created to make astrophotography processing more direct and accessible.</p>
+        <h1>Astronomy software</h1>
+        <p>Small projects I build to solve practical problems in image processing, planning, and visualisation.</p>
       </section>
       <section class="software section section--page" aria-label="Software projects">
-        <div class="software-intro"><p class="eyebrow">Astronomy software</p><h2>Explore and process<br>with less friction.</h2><p>Personal projects built around practical imaging needs and shared with the astrophotography community.</p></div>
+        <div class="software-intro"><p class="eyebrow">Projects</p><h2>Tools I use and share.</h2><p>These projects started with needs in my own imaging workflow. I publish them in case they are useful to other astrophotographers too.</p></div>
         <div class="software-projects">
           <article class="software-card">
             <div class="software-topline"><span class="status-dot"></span><span>Sky atlas · Beta</span><span class="version">v1.2.0-beta.6</span></div>

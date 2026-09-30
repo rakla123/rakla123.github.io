@@ -13,6 +13,8 @@ test("renders the home page without a personal name", async () => {
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type"), /^text\/html/);
   assert.match(html, /FlapAstro — Deep-sky imaging/);
+  assert.match(html, /Deep-sky astrophotography/);
+  assert.match(html, /I photograph galaxies, nebulae/);
   assert.match(html, /cdn\.astrobin\.com/);
   assert.match(html, /href="\/gallery\/"/);
   assert.match(html, /© FlapAstro/);
@@ -25,6 +27,7 @@ test("renders the home page without a personal name", async () => {
   assert.match(html, /aria-label="FlapAstro on Instagram/);
   assert.match(html, /aria-label="FlapAstro projects on GitHub/);
   assert.doesNotMatch(html, /Ralf|Klappert/i);
+  assert.doesNotMatch(html, /Images shaped by long nights/);
 });
 
 test("serves separate section pages", async () => {
