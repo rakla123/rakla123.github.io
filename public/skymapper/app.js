@@ -1,5 +1,7 @@
 import { projectedPathData, projectedQuadIsUsable, skyRoundTripIsValid } from "./geometry.mjs";
 
+import { resolveSurveyUrl } from "./survey.mjs";
+
 const thumbLayer = document.querySelector("#thumb-layer");
 const footprintSvg = document.querySelector("#footprint-svg");
 const preview = document.querySelector("#preview");
@@ -559,19 +561,6 @@ function updateCalibrationButtons() {
   });
 }
 
-function applySurvey(surveyId) {
-  if (!aladin || !surveyId) return;
-  try {
-    if (typeof aladin.setImageSurvey === "function") {
-      aladin.setImageSurvey(surveyId);
-    } else if (typeof aladin.setBaseImageLayer === "function") {
-      aladin.setBaseImageLayer(surveyId);
-    }
-  } catch {
-    /* Keep the previous survey if this Aladin build cannot load the selected HiPS. */
-  }
-}
-
 function wireCalibrationControls() {
   rotationControls?.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-rotation]");
@@ -786,11 +775,23 @@ async function boot() {
     }
   }
   loadImageAdjustments();
-  loadDisplayConfig({});
+  const config = await fetch("/api/config").then((res) => res.json()).catch(() => null);
+  loadDisplayConfig(config?.display || {});
   loadPageSize();
 
+  let surveyUrl = displayConfig.survey || "P/DSS2/color";
+  try {
+    surveyUrl = await resolveSurveyUrl(surveyUrl);
+  } catch (error) {
+    const status = document.createElement("p");
+    status.className = "survey-error";
+    status.setAttribute("role", "status");
+    status.textContent = error.message;
+    document.querySelector(".sky-stage").appendChild(status);
+  }
+
   aladin = A.aladin("#aladin", {
-    survey: displayConfig.survey || "P/DSS2/color",
+    survey: surveyUrl,
     projection: "AIT",
     fov: WHOLE_SKY_FOV_DEG,
     target: "0 +0",
@@ -831,12 +832,7 @@ async function boot() {
     }
   });
 
-  const config = await fetch("/api/config").then((res) => res.json()).catch(() => null);
-  if (config?.display) {
-    loadDisplayConfig(config.display);
-    updateCalibrationButtons();
-    applySurvey(displayConfig.survey);
-  }
+  updateCalibrationButtons();
   if (config?.observer) {
     observerPill.textContent = `${config.observer.lat}, ${config.observer.lon} · ${config.observer.elev} m`;
   }

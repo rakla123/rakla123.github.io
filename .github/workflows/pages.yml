@@ -31,7 +31,7 @@ jobs:
         run: node scripts/build.mjs
 
       - name: Test generated site
-        run: node --test tests/site.test.mjs
+        run: node --test tests/*.test.mjs
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

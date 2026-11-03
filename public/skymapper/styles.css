@@ -1005,3 +1005,5 @@ h1 {
     max-width: calc(100vw - 110px);
   }
 }
+
+.survey-error { position: absolute; top: 110px; left: 74px; max-width: min(480px, 70vw); z-index: 20; padding: 10px; border-radius: 8px; background: #302515; color: #fff0cc; font-size: 13px; }
