@@ -403,7 +403,7 @@ function footprintMayBeVisible(image, fov, rect) {
     && center.y >= -padding && center.y <= rect.height + padding;
 }
 
-function projectedFootprint(image) {
+function projectedFootprint(image, viewport) {
   const geometry = cachedFootprintGeometry(image);
   if (geometry.kind === "point") {
     const center = screenPoint(image.ra, image.dec);
@@ -442,7 +442,7 @@ function projectedFootprint(image) {
   const width = allCornersValid ? Math.hypot(topRight.x - topLeft.x, topRight.y - topLeft.y) : 0;
   const height = allCornersValid ? Math.hypot(bottomLeft.x - topLeft.x, bottomLeft.y - topLeft.y) : 0;
   return {
-    matrix: matrix && projectedQuadIsUsable(screenCorners, footprintSvg.clientWidth, footprintSvg.clientHeight) ? matrix : null,
+    matrix: matrix && projectedQuadIsUsable(screenCorners, viewport.width, viewport.height) ? matrix : null,
     baseWidth,
     baseHeight,
     points: screenPolygon,
@@ -629,7 +629,10 @@ function wireImageCalibrationControls() {
 function renderMarkers() {
   if (!aladin) return;
   lastViewportSignature = viewportSignature();
+  // Read layout once before marker writes to avoid repeated synchronous layout.
   const rect = thumbLayer.getBoundingClientRect();
+  const viewport = { width: footprintSvg.clientWidth, height: footprintSvg.clientHeight };
+  const activeKey = activeImage ? imageKey(activeImage) : null;
   const fov = Number(aladin.getFov?.()[0] || 90);
   const imageMode = displayConfig.overlayMode === "image";
   const allowImageFill = imageMode && (interactionSettled || activeImage) && fov <= IMAGE_FILL_MAX_FOV_DEG;
@@ -643,7 +646,7 @@ function renderMarkers() {
 
     let footprint = null;
     try {
-      footprint = projectedFootprint(marker.image);
+      footprint = projectedFootprint(marker.image, viewport);
     } catch {
       footprint = null;
     }
@@ -654,14 +657,14 @@ function renderMarkers() {
       continue;
     }
 
-    const outlinePath = projectedPathData(footprint.polygon, footprintSvg.clientWidth, footprintSvg.clientHeight);
+    const outlinePath = projectedPathData(footprint.polygon, viewport.width, viewport.height);
     const outlineSegmentCount = (outlinePath.match(/M/g) || []).length;
     const nodeVisible = Boolean(outlinePath && outlineSegmentCount === 1 && footprint.matrix);
     marker.node.hidden = !nodeVisible;
     if (outlinePath) {
       marker.outline.setAttribute("d", outlinePath);
       marker.outline.hidden = false;
-      marker.outline.classList.toggle("is-active", activeImage && imageKey(activeImage) === imageKey(marker.image));
+      marker.outline.classList.toggle("is-active", activeKey !== null && activeKey === imageKey(marker.image));
       if (nodeVisible) {
         const [a, b, c, d, e, f] = footprint.matrix;
         marker.node.style.left = "0";
@@ -669,7 +672,7 @@ function renderMarkers() {
         marker.node.style.width = `${footprint.baseWidth}px`;
         marker.node.style.height = `${footprint.baseHeight}px`;
         marker.node.style.transform = `matrix(${a}, ${b}, ${c}, ${d}, ${e}, ${f})`;
-        const isActive = activeImage && imageKey(activeImage) === imageKey(marker.image);
+        const isActive = activeKey !== null && activeKey === imageKey(marker.image);
         const showImageFill = imageMode && marker.image.overlayUrl && (isActive || (allowImageFill && imageFillCount < MAX_IMAGE_FILLS));
         if (showImageFill) imageFillCount += 1;
         marker.node.style.backgroundImage = showImageFill ? `url("${marker.image.overlayUrl}")` : "none";
@@ -754,7 +757,7 @@ async function loadImages() {
   try {
     response = await fetch("/api/images");
   } catch {
-    throw new Error("The local mapper server is not reachable. Keep the launcher window open, then reload this page.");
+    throw new Error("The portfolio data could not be loaded. Check your connection and reload this page.");
   }
   if (!response.ok) {
     const problem = await response.json().catch(() => ({ error: response.statusText }));
@@ -765,9 +768,9 @@ async function loadImages() {
   currentPage = 0;
 
   observerPill.textContent = `${payload.observer.lat}, ${payload.observer.lon} · ${payload.observer.elev} m`;
+  if (window.__SKY_MAPPER_HOSTED__) observerPill.textContent = "Public portfolio snapshot";
   if (accountTitle) accountTitle.textContent = payload.username || "AstroBin account";
   libraryPill.textContent = `Library: ${payload.library || "not configured"}`;
-  if (window.__SKY_MAPPER_HOSTED__) observerPill.textContent = "Public portfolio snapshot";
   renderCurrentPage();
 }
 

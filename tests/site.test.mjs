@@ -175,6 +175,15 @@ test("links to and builds a runnable credential-free Sky Mapper section", async 
   const snapshot = JSON.parse(await readFile(new URL("../dist/client/skymapper/data/images.json", import.meta.url), "utf8"));
 
   assert.match(home, /href="\/skymapper\/"/);
+  assert.match(home, /<nav aria-label="Primary navigation">[\s\S]*?href="\/skymapper\/"[\s\S]*?<\/nav>/);
+  assert.equal((html.match(/<!doctype html>/gi) || []).length, 1);
+  const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+  assert.equal(new Set(ids).size, ids.length, "hosted page IDs must be unique");
+  const config = JSON.parse(await readFile(new URL("../dist/client/skymapper/data/config.json", import.meta.url), "utf8"));
+  assert.equal(config.version, "1.2.0-beta.6+web.20261103");
+  assert.ok(snapshot.images.every(image => Number.isFinite(image.ra) && Number.isFinite(image.dec)));
+  assert.doesNotMatch(JSON.stringify(snapshot), /api_secret|api_key|localFiles|localSolveImageUrl/);
+
   assert.match(software, /href="\/skymapper\/"/);
   assert.match(software, /Run Sky Mapper/);
   assert.match(html, /AstroBin Sky Mapper — FlapAstro/);
