@@ -10,4 +10,4 @@ window.fetch = (resource, options) => {
 };
 
 window.A = A;
-await import("./app.js");
+await import("./app.js?v=20261103-survey2");
