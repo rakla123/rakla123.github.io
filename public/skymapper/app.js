@@ -2,6 +2,8 @@ import { projectedPathData, projectedQuadIsUsable, skyRoundTripIsValid } from ".
 
 import { resolveSurveyUrl } from "./survey.mjs";
 
+import { readViewportSignature } from "./viewport.mjs";
+
 const thumbLayer = document.querySelector("#thumb-layer");
 const footprintSvg = document.querySelector("#footprint-svg");
 const preview = document.querySelector("#preview");
@@ -480,22 +482,7 @@ function refreshViewAfterNavigation() {
 }
 
 function viewportSignature() {
-  if (!aladin) return "";
-  const fov = aladin.getFov?.() || [];
-  const center = aladin.getRaDec?.() || aladin.getCenter?.() || [];
-  const centerRa = Array.isArray(center) ? center[0] : center.ra ?? center.RA;
-  const centerDec = Array.isArray(center) ? center[1] : center.dec ?? center.DE;
-  const rotation = Number(aladin.getRotation?.() || 0);
-  const projection = String(aladin.getProjectionName?.() || "");
-  return [
-    Number(fov[0] || 0).toFixed(4),
-    Number(centerRa || 0).toFixed(4),
-    Number(centerDec || 0).toFixed(4),
-    rotation.toFixed(3),
-    projection,
-    thumbLayer.clientWidth,
-    thumbLayer.clientHeight
-  ].join("|");
+  return readViewportSignature(aladin, thumbLayer.clientWidth, thumbLayer.clientHeight);
 }
 
 function scheduleRenderIfViewportChanged() {
@@ -826,7 +813,7 @@ async function boot() {
   });
   ["objectHovered", "resize", "resizeChanged"].forEach((eventName) => {
     try {
-      aladin.on(eventName, scheduleRender);
+      aladin.on(eventName, () => synchronizeViewportOverlays());
     } catch {
       /* Aladin versions expose slightly different event sets. */
     }
@@ -869,7 +856,16 @@ async function boot() {
     scheduleInteractiveRender();
     synchronizeViewportOverlays();
   }, { passive: true });
-  window.addEventListener("resize", scheduleRender);
+  // Container changes (including fullscreen/sidebar resizing) need not fire
+  // window.resize, and Aladin's transform can settle on a later animation frame.
+  const resizeObserver = new ResizeObserver(() => synchronizeViewportOverlays());
+  resizeObserver.observe(document.querySelector("#aladin"));
+  window.addEventListener("resize", () => synchronizeViewportOverlays());
+  document.addEventListener("fullscreenchange", () => synchronizeViewportOverlays());
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) synchronizeViewportOverlays();
+  });
+  document.querySelector("#aladin").addEventListener("AL:frame.changed", () => synchronizeViewportOverlays());
   setInterval(() => {
     if (!document.hidden) scheduleRenderIfViewportChanged();
   }, 500);

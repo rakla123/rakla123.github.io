@@ -6,20 +6,20 @@
     <meta name="description" content="Explore the FlapAstro AstroBin portfolio on an interactive whole-sky map.">
     <meta name="theme-color" content="#02050b">
     <title>AstroBin Sky Mapper — FlapAstro</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20261104-viewport">
   </head>
   <body>
     <main class="app-shell">
+      <header class="mapper-header"><div class="branding">
+            <a class="site-return" href="/" aria-label="Return to the FlapAstro website"><span aria-hidden="true">←</span> Back to FlapAstro website</a>
+            <p class="eyebrow">AstroBin Sky Mapper</p>
+            <h1 id="account-title">AstroBin account</h1>
+          </div></header>
       <section class="sky-stage" aria-label="AstroBin sky projection">
         <div id="aladin"></div>
         <svg id="footprint-svg" class="footprint-svg" aria-hidden="true"></svg>
         <div id="thumb-layer" class="thumb-layer"></div>
         <div class="topbar">
-          <div class="branding">
-            <a class="site-return" href="/" aria-label="Return to the FlapAstro website"><span aria-hidden="true">←</span> Back to FlapAstro website</a>
-            <p class="eyebrow">AstroBin Sky Mapper</p>
-            <h1 id="account-title">AstroBin account</h1>
-          </div>
           <div class="status-pills">
             <span id="library-pill">Library: not configured</span>
             <span id="image-count">Loading images...</span>
@@ -66,6 +66,6 @@
         <p class="api-notice">Hosted portfolio edition &middot; updated 3 November 2026 · Public metadata snapshot · <a href="/software/">About and desktop download</a><br>This product uses the AstroBin API but is not endorsed or certified by AstroBin.</p>
       </section>
     </main>
-    <script type="module" src="bootstrap.js?v=20261103-survey2"></script>
+    <script type="module" src="bootstrap.js?v=20261104-viewport"></script>
   </body>
 </html>

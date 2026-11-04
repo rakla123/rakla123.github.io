@@ -177,6 +177,7 @@ test("links to and builds a runnable credential-free Sky Mapper section", async 
   assert.match(home, /href="\/skymapper\/"/);
   assert.match(home, /<nav aria-label="Primary navigation">[\s\S]*?href="\/skymapper\/"[\s\S]*?<\/nav>/);
   assert.equal((html.match(/<!doctype html>/gi) || []).length, 1);
+  assert.match(html, /<header class="mapper-header">[\s\S]*?<\/header>\s*<section class="sky-stage"/);
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
   assert.equal(new Set(ids).size, ids.length, "hosted page IDs must be unique");
   const config = JSON.parse(await readFile(new URL("../dist/client/skymapper/data/config.json", import.meta.url), "utf8"));
