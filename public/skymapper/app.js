@@ -1,6 +1,6 @@
 import { projectedPathData, projectedQuadIsUsable, skyRoundTripIsValid } from "./geometry.mjs";
 
-import { resolveSurveyUrl } from "./survey.mjs";
+import { resolveSurveyUrl, BACKGROUND_SURVEYS } from "./survey.mjs?v=20261106-surveys";
 
 import { readViewportSignature } from "./viewport.mjs";
 
@@ -548,6 +548,50 @@ function updateCalibrationButtons() {
   });
 }
 
+function wireBackgroundSelector() {
+  const select = document.querySelector("#background-survey");
+  const status = document.querySelector("#background-status");
+  for (const survey of BACKGROUND_SURVEYS) {
+    const option = document.createElement("option");
+    option.value = survey.id;
+    option.textContent = survey.name;
+    select.appendChild(option);
+  }
+  select.value = displayConfig.survey;
+  if (!select.value) select.value = "P/DSS2/color";
+  select.addEventListener("change", async () => {
+    const previous = aladin.getBaseImageLayer();
+    const previousId = displayConfig.survey;
+    let replaced = false;
+    const definition = BACKGROUND_SURVEYS.find(item => item.id === select.value);
+    select.disabled = true;
+    status.textContent = `Loading ${definition.name}...`;
+    try {
+      const url = await resolveSurveyUrl(definition.id);
+      await new Promise((resolve, reject) => {
+        const timer = setTimeout(() => reject(new Error("Survey loading timed out")), 15000);
+        const layer = A.imageHiPS(url, {
+          name: definition.name, url, imgFormat: "jpeg",
+          successCallback: () => { clearTimeout(timer); resolve(); },
+          errorCallback: () => { clearTimeout(timer); reject(new Error("Survey loading failed")); }
+        });
+        replaced = true;
+        aladin.setBaseImageLayer(layer);
+      });
+      displayConfig.survey = definition.id;
+      saveDisplayConfig();
+      status.textContent = "";
+      synchronizeViewportOverlays();
+    } catch {
+      if (replaced && previous) aladin.setBaseImageLayer(previous);
+      select.value = previousId;
+      status.textContent = `${definition.name} is currently unavailable. The previous background is retained.`;
+    } finally {
+      select.disabled = false;
+    }
+  });
+}
+
 function wireCalibrationControls() {
   rotationControls?.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-rotation]");
@@ -849,6 +893,7 @@ async function boot() {
     currentPage = pageSize === "all" ? 0 : Math.floor(firstVisibleIndex / pageSize);
     renderCurrentPage();
   });
+  wireBackgroundSelector();
   wireCalibrationControls();
   wireImageCalibrationControls();
 

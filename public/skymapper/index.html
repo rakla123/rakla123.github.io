@@ -6,7 +6,7 @@
     <meta name="description" content="Explore the FlapAstro AstroBin portfolio on an interactive whole-sky map.">
     <meta name="theme-color" content="#02050b">
     <title>AstroBin Sky Mapper — FlapAstro</title>
-    <link rel="stylesheet" href="styles.css?v=20261104-viewport">
+    <link rel="stylesheet" href="styles.css?v=20261106-surveys">
   </head>
   <body>
     <main class="app-shell">
@@ -14,7 +14,10 @@
             <a class="site-return" href="/" aria-label="Return to the FlapAstro website"><span aria-hidden="true">←</span> Back to FlapAstro website</a>
             <p class="eyebrow">AstroBin Sky Mapper</p>
             <h1 id="account-title">AstroBin account</h1>
-          </div></header>
+          </div>
+        <label class="background-control">Background survey <select id="background-survey" aria-label="Background survey"></select></label>
+        <span id="background-status" role="status"></span>
+      </header>
       <section class="sky-stage" aria-label="AstroBin sky projection">
         <div id="aladin"></div>
         <svg id="footprint-svg" class="footprint-svg" aria-hidden="true"></svg>
@@ -66,6 +69,6 @@
         <p class="api-notice">Hosted portfolio edition &middot; updated 3 November 2026 · Public metadata snapshot · <a href="/software/">About and desktop download</a><br>This product uses the AstroBin API but is not endorsed or certified by AstroBin.</p>
       </section>
     </main>
-    <script type="module" src="bootstrap.js?v=20261104-viewport"></script>
+    <script type="module" src="bootstrap.js?v=20261106-surveys"></script>
   </body>
 </html>

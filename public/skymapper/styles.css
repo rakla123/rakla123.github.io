@@ -522,3 +522,8 @@ h1 {
   .mapper-header { padding: 8px 12px; }
   .mapper-header h1 { font-size: 18px; }
 }
+
+.mapper-header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; }
+.background-control { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.background-control select { max-width: 260px; background: #101a28; color: #f6f8ff; border: 1px solid #657083; border-radius: 6px; padding: 6px; }
+#background-status { font-size: 12px; color: #f0c16b; }
