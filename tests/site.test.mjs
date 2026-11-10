@@ -61,7 +61,7 @@ test("serves separate section pages", async () => {
   assert.match(about, /garden observatory at 840 m under Bortle 4 skies/);
   assert.match(equipment, /Sky-Watcher Equinox 120/);
   assert.match(equipment, /0\.85× reducer/);
-  assert.match(equipment, /Starlight Feathertouch 2\.5&quot; \(FTF2535HD\) with DeepSkyDad AF2 AutoFocuser/);
+  assert.match(equipment, /Starlight Feathertouch 2\.5&quot; \(FTF2535HD\) with PrimaLuceLab Sesto Senso 3/);
   assert.match(equipment, /QHYCCD QHY268M/);
   assert.match(equipment, /QHYCCD OAG-M with QHY5-II/);
   assert.match(equipment, /QHYCFW3-M-SR \(7×36 mm\)/);
@@ -70,7 +70,7 @@ test("serves separate section pages", async () => {
   assert.match(equipment, /Antlia 3 nm OIII Pro/);
   assert.match(equipment, /Antlia 3 nm SII Pro/);
   assert.match(equipment, /William Optics RedCat 51 II/);
-  assert.match(equipment, /DeepSkyDad AF/);
+  assert.match(equipment, /DeepSkyDad AF3/);
   assert.match(equipment, /QHYCCD QHY268C/);
   assert.match(equipment, /Optolong L-Pro · Optolong L-Enhance · Optolong L-Extreme · Optolong L-Ultimate/);
   assert.match(equipment, /<h3>Other<\/h3>/);
