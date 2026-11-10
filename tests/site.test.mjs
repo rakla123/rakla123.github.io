@@ -112,7 +112,8 @@ test("serves separate section pages", async () => {
   assert.match(software, /five-minute inactivity timeout/);
   assert.match(software, /former v0\.10\.2 package included/);
   assert.match(software, /rule 5\.8/);
-  assert.match(software, /documentation changes do not establish compliance/);
+  assert.match(software, /RC-Astro-CLI-Wrapper-0\.10\.2-unsigned\.zip/);
+  assert.match(software, /not presented as CPD-approved/);
   assert.match(software, /v0\.10\.2/);
   assert.match(software, /PixInsight 1\.9\.5/);
   assert.match(software, /preserves XISF image properties/);
